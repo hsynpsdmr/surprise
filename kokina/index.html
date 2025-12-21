@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kokina 🌿</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to top, #0b3d2e, #145a32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.scene {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.stem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8px;
+  height: 200px;
+  background: #2e7d32;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.leaf {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: #1b5e20;
+  border-radius: 50% 50% 50% 0;
+}
+
+.leaf.left {
+  left: 80px;
+  top: 220px;
+  transform: rotate(-30deg);
+}
+
+.leaf.right {
+  right: 80px;
+  top: 220px;
+  transform: rotate(210deg);
+}
+
+.berries {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translateX(-50%);
+  animation: sway 4s ease-in-out infinite;
+}
+
+.berry {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 30% 30%, #ffcccc, #c62828);
+  border-radius: 50%;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateX(-50%) rotate(-2deg); }
+  50% { transform: translateX(-50%) rotate(2deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.message {
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+  <div class="berries">
+    <div class="berry" style="top:20px; left:40px;"></div>
+    <div class="berry" style="top:60px; left:80px;"></div>
+    <div class="berry" style="top:40px; left:120px;"></div>
+    <div class="berry" style="top:90px; left:60px;"></div>
+    <div class="berry" style="top:100px; left:110px;"></div>
+    <div class="berry" style="top:140px; left:80px;"></div>
+  </div>
+
+  <div class="stem"></div>
+  <div class="leaf left"></div>
+  <div class="leaf right"></div>
+
+  <div class="message">
+    🌿 Yeni yıl gibi, hep umut olsun 🌿
+  </div>
+</div>
+
+</body>
+</html>
