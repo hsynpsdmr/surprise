@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eda için bir sürpriz...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Apple ICC', 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Yıldızlar ve Gece Teması */
+        .night {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotateZ(45deg);
+        }
+
+        .shooting_star {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 2px;
+            background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+            border-radius: 999px;
+            filter: drop-shadow(0 0 6px #699bff);
+            animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+        }
+
+        @keyframes tail { 0% { width: 0; } 30% { width: 100px; } 100% { width: 0; } }
+        @keyframes shooting { 0% { transform: translateX(0); } 100% { transform: translateX(300px); } }
+
+        /* İçerik Kartı */
+        .content {
+            text-align: center;
+            z-index: 100;
+            opacity: 0;
+            animation: fadeIn 3s forwards ease-in;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d;
+            letter-spacing: 5px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 500px;
+            line-height: 1.8;
+            color: #d1d1d1;
+            margin: 20px auto;
+        }
+
+        .highlight {
+            color: #ff4d6d;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Küçük Kalpler */
+        .floating-heart {
+            position: absolute;
+            bottom: -20px;
+            color: rgba(255, 77, 109, 0.4);
+            animation: floatUp 5s infinite linear;
+        }
+
+        @keyframes floatUp {
+            to { transform: translateY(-110vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="night" id="starField"></div>
+
+    <div class="content">
+        <h1>EDA</h1>
+        <p>Aramızdaki kilometreler sadece bir sayıdan ibaret...</p>
+        <p>Aynı gökyüzünün altında, farklı şehirlerde olsak da <br> 
+           aklımdaki tek yer <span class="highlight">senin yanın.</span></p>
+        <div style="font-size: 40px; margin-top: 30px;">✨❤️✨</div>
+    </div>
+
+    <script>
+        // Rastgele yıldız kaymaları oluşturma
+        const starField = document.getElementById('starField');
+        for (let i = 0; i < 15; i++) {
+            const star = document.createElement('div');
+            star.className = 'shooting_star';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 5000 + 'ms';
+            star.style.animationDuration = (Math.random() * 2000 + 2000) + 'ms';
+            starField.appendChild(star);
+        }
+
+        // Yükselen kalpler
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }, 400);
+    </script>
+</body>
+</html>
