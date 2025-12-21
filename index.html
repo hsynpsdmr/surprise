@@ -1,95 +1,99 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sürpriz ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: radial-gradient(circle, #ff5f9e, #ff2f6d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-      color: white;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eda</title>
 
-    h1 {
-      font-size: 2.5rem;
-      z-index: 2;
-    }
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0a2540, #000814);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
 
-    p {
-      font-size: 1.2rem;
-      z-index: 2;
-    }
+.card {
+  max-width: 340px;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: fadeIn 1.8s ease;
+}
 
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      transform: rotate(45deg);
-      animation: float 6s linear infinite;
-      opacity: 0.7;
-    }
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
 
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      border-radius: 50%;
-    }
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
 
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
+.highlight {
+  color: #ffd700;
+  font-weight: 600;
+}
 
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
+.heart {
+  font-size: 26px;
+  animation: beat 1.5s infinite;
+  margin: 15px 0;
+}
 
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(45deg);
-      }
-      100% {
-        transform: translateY(-10vh) rotate(45deg);
-      }
-    }
-  </style>
+.footer {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes beat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+</style>
 </head>
+
 <body>
 
-  <div>
-    <h1>❤️ Seni Seviyorum ❤️</h1>
-    <p>Bu küçük sürpriz sadece senin için</p>
+<div class="card">
+  <h1>Eda</h1>
+
+  <p>
+    Öğretmen olup<br>
+    sabırlı olmayı bilen,<br>
+    <span class="highlight">Fenerbahçeli</span> olup mücadeleyi seven,<br>
+    <span class="highlight">Ordulu</span> olup deniz gibi derin olan biri…
+  </p>
+
+  <div class="heart">❤️</div>
+
+  <p>
+    Bu sayfa sana şunu söylemek için var:<br>
+    <strong>Sen fark edilmesi kolay biri değilsin,<br>
+    ama fark eden için çok özelsin.</strong>
+  </p>
+
+  <div class="footer">
+    Belki bir kahve,<br>
+    belki sadece bir gülümseme ☕
   </div>
-
-  <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (3 + Math.random() * 5) + "s";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 8000);
-    }
-
-    setInterval(createHeart, 300);
-  </script>
+</div>
 
 </body>
 </html>
