@@ -1,137 +1,204 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kokina</title>
-
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: radial-gradient(circle at bottom, #1b3a2f, #0b1f18);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.kokina {
-  position: relative;
-  width: 260px;
-  height: 420px;
-  animation: sway 8s ease-in-out infinite;
-}
-
-/* Gövde */
-.stem {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 6px;
-  height: 230px;
-  background: linear-gradient(to right, #2e7d32, #1b5e20);
-  transform: translateX(-50%);
-  border-radius: 4px;
-}
-
-/* Yapraklar */
-.leaf {
-  position: absolute;
-  width: 90px;
-  height: 38px;
-  background: linear-gradient(to right, #1b5e20, #2e7d32);
-  border-radius: 50% 50% 50% 20%;
-  opacity: 0.9;
-}
-
-.leaf.left {
-  left: 20px;
-  bottom: 160px;
-  transform: rotate(-25deg);
-}
-
-.leaf.right {
-  right: 20px;
-  bottom: 170px;
-  transform: rotate(205deg);
-}
-
-/* Meyve grubu */
-.berries {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  transform: translateX(-50%);
-}
-
-/* Tek meyve */
-.berry {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: radial-gradient(circle at 30% 30%, #ffb3b3, #b71c1c);
-  border-radius: 50%;
-  box-shadow:
-    inset -1px -1px 2px rgba(0,0,0,0.4),
-    0 1px 2px rgba(0,0,0,0.5);
-}
-
-/* Hafif canlılık */
-.berry:nth-child(odd) {
-  animation: berryMove 6s ease-in-out infinite;
-}
-
-/* Mesaj */
-.text {
-  position: absolute;
-  bottom: -70px;
-  width: 100%;
-  text-align: center;
-  color: #e0f2f1;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-/* Animasyonlar */
-@keyframes sway {
-  0%,100% { transform: rotate(-1deg); }
-  50% { transform: rotate(1.2deg); }
-}
-
-@keyframes berryMove {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokina Buketi</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-<div class="kokina">
-  <div class="berries">
-    <div class="berry" style="top:20px; left:80px;"></div>
-    <div class="berry" style="top:40px; left:110px;"></div>
-    <div class="berry" style="top:30px; left:140px;"></div>
-    <div class="berry" style="top:70px; left:90px;"></div>
-    <div class="berry" style="top:60px; left:130px;"></div>
-    <div class="berry" style="top:90px; left:110px;"></div>
-    <div class="berry" style="top:110px; left:80px;"></div>
-    <div class="berry" style="top:120px; left:130px;"></div>
-    <div class="berry" style="top:140px; left:105px;"></div>
-    <div class="berry" style="top:160px; left:120px;"></div>
-  </div>
-
-  <div class="stem"></div>
-  <div class="leaf left"></div>
-  <div class="leaf right"></div>
-
-  <div class="text">
-    Yeni yıl gibi… <br> Dayanıklı ve umut dolu 🌿
-  </div>
-</div>
-
+    <!-- Kar Taneleri -->
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    
+    <div class="bouquet">
+        <!-- Dal 1 - Merkez -->
+        <div class="branch b1">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dal 2 - Sol 1 -->
+        <div class="branch b2">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="branch b3">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="branch b4">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="branch b5">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="branch b6">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dal 7 - Sağ 3 -->
+        <div class="branch b7">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kısa Dal - Ara 1 (Merkez-Sol1 arası) -->
+        <div class="branch short s1">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries small">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kısa Dal - Ara 2 (Merkez-Sağ1 arası) -->
+        <div class="branch short s2">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries small">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kısa Dal - Ara 3 (Sol1-Sol2 arası) -->
+        <div class="branch short s3">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries small">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kısa Dal - Ara 4 (Sağ1-Sağ2 arası) -->
+        <div class="branch short s4">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries small">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kısa Dal - Ara 5 (Sol2-Sol3 arası) -->
+        <div class="branch short s5">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries small">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kısa Dal - Ara 6 (Sağ2-Sağ3 arası) -->
+        <div class="branch short s6">
+            <div class="stem"></div>
+            <div class="top">
+                <div class="berries small">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kurdele -->
+        <div class="ribbon">
+            <div class="knot"></div>
+            <div class="bow-left"></div>
+            <div class="bow-right"></div>
+        </div>
+    </div>
 </body>
 </html>
